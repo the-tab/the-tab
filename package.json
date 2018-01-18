@@ -42,6 +42,7 @@
   },
   "dependencies": {
     "firebase": "^4.8.2",
+    "firebase-tools": "^3.17.0",
     "jss": "^9.5.1",
     "jss-vendor-prefixer": "^8.0.0",
     "mobx": "^3.4.1",
