@@ -3,7 +3,8 @@
     ["env", {
       "targets": {
         "chrome": 52
-      }
+      },
+      "modules": false
     }],
     "react",
     "stage-0"

@@ -6,7 +6,7 @@ export default class Bookmarks extends Component {
   render() {
     return (
       <div>
-        <Button />
+        <Button>BUTTON</Button>
       </div>
     );
   }

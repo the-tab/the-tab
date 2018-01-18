@@ -1,5 +1,3 @@
-import Button from './Button';
 
-module.exports = {
-  Button,
-}
+export theme from './theme';
+export Button from './Button';
