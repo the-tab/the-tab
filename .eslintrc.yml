@@ -12,6 +12,8 @@ rules:
   no-underscore-dangle: 0
   no-void: 0
   global-require: 0
+  import/no-unresolved: 0
+  import/extensions: 0
 globals:
   document: 0
   window: 0

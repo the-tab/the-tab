@@ -4,7 +4,7 @@
   "description": "",
   "main": "dist/index.html",
   "scripts": {
-    "start": "node_modules/.bin/webpack-dev-server --hotOnly --inline --client-log-level=none --progress",
+    "start": "node_modules/.bin/webpack-dev-server --host 0.0.0.0 --hotOnly --inline --client-log-level=none --progress",
     "build": "node_modules/.bin/webpack -p --progress",
     "lint": "node_modules/.bin/eslint src"
   },
@@ -39,6 +39,7 @@
     "webpack-dev-server": "^2.11.0"
   },
   "dependencies": {
+    "firebase": "^4.8.2",
     "jss": "^9.5.1",
     "jss-vendor-prefixer": "^8.0.0",
     "mobx": "^3.4.1",
