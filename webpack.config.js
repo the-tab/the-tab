@@ -2,7 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 
 const config = {
-  entry: ['babel-polyfill', './src/index.js'],
+  entry: ['babel-polyfill', 'react-hot-loader/patch', './src/index.js'],
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
