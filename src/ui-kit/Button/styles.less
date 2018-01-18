@@ -1,0 +1,38 @@
+@import "../theme/variables";
+
+.button {
+  background: none;
+  border: none;
+  box-shadow: none;
+  outline: none;
+
+  width: 150px;
+  height: 40px;
+
+  margin: 5px;
+  border-radius: 3px;
+
+  > span {
+    font-size: var(--font-size-regular);
+    font-family: var(--font-family-primary);
+    // text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  &.primary {
+    .themed;
+  }
+
+  &.link {
+    .inverted;
+
+    > span {
+      border-bottom: 1px solid var(--text-color-inverted);
+    }
+  }
+
+  &.danger {
+    background: var(--background-color-danger);
+    color: var(--text-color);
+  }
+}

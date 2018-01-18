@@ -1,16 +1,21 @@
 import React from 'react';
-import injectSheet, {withTheme} from 'react-jss'
 
 import styles from './styles';
 
-const Button = ({ classes, children }) => {
+const Button = ({ children, ...props }) => {
+  const className = `
+    button
+    ${props.primary && "primary"}
+    ${props.link && "link"}
+    ${props.danger && "danger"}
+  `
   return (
-    <button className={classes.button}>
-      <span className={classes.label}>
-        {children}
+    <button className={className}>
+      <span>
+        { children }
       </span>
     </button>
   )
 }
 
-export default withTheme(injectSheet(styles)(Button))
+export default Button;

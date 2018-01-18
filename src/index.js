@@ -25,4 +25,4 @@ if (module.hot) {
 
 
 // disable Hot Loader warnings
-global.__REACT_HOT_LOADER__.warnings = false;
+// global.__REACT_HOT_LOADER__.warnings = false;

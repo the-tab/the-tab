@@ -24,11 +24,15 @@ const config = {
       {
         test: /.css$/,
         loaders: ['style-loader', 'css-loader']
+      },
+      {
+        test: /.less/,
+        loaders: ['style-loader', 'css-loader', 'less-loader']
       }
     ]
   },
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx', '.less']
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin()
