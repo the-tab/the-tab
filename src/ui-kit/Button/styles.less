@@ -6,11 +6,15 @@
   box-shadow: none;
   outline: none;
 
-  width: 150px;
+  min-width: 150px;
   height: 40px;
 
   margin: 5px;
   border-radius: 3px;
+  padding: 0 15px;
+
+  cursor: pointer;
+  transition: 0.3s;
 
   > span {
     font-size: var(--font-size-regular);
@@ -21,10 +25,14 @@
 
   &.primary {
     .themed;
+    .hover-effect;
+    .active-effect;
   }
 
   &.link {
     .inverted;
+    .hover-effect;
+    .active-effect;
 
     > span {
       border-bottom: 1px solid var(--text-color-inverted);
@@ -34,5 +42,7 @@
   &.danger {
     background: var(--background-color-danger);
     color: var(--text-color);
+    .hover-effect;
+    .active-effect;
   }
 }

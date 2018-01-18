@@ -23,3 +23,29 @@
   background: none;
   color: var(--text-color-inverted);
 }
+
+.hover-effect {
+  &:hover {
+    // transform: translateY(0.5px);
+    transform: scale(0.99);
+    transition: 0.1s;
+  }
+}
+
+.active-effect {
+  &:active {
+    transform: translateY(1.5px) scale(0.99);
+    // transition: 0.1s;
+  }
+}
+
+.divider {
+  height: 1px;
+  max-height: 1px;
+
+  padding: 0 10px;
+  margin: 10px 0;
+  
+  background: #b6b6b6;
+  background-clip: content-box;
+}
