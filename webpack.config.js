@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const BabiliPlugin = require('babili-webpack-plugin');
 
 const config = {
   entry: ['babel-polyfill', 'react-hot-loader/patch', './src/index.js'],
@@ -35,7 +36,7 @@ const config = {
     extensions: ['.js', '.jsx', '.less']
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
   ],
 };
 
@@ -43,7 +44,8 @@ if (process.env.NODE_ENV === 'production') {
   config.plugins.push(
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': '"production"'
-    })
+    }),
+    new BabiliPlugin()
   );
 }
 

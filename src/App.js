@@ -25,7 +25,7 @@ export default class App extends Component {
     if (this.state.ready) {
       return (
         <Switch>
-          <Route exact path="/bookmarks" component={BookmarksScene} />
+          <Route exact path="/" component={BookmarksScene} />
         </Switch>
       );
     }
