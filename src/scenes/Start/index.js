@@ -16,8 +16,8 @@ export default class StartScene extends Component {
     document.documentElement.removeEventListener('wheel', this.handleScroll);
   }
 
-  handleScroll = ({ movementY }) => {
-    const nextPosition = this.state.bottom + movementY * 3;
+  handleScroll = ({ wheelDeltaY }) => {
+    const nextPosition = this.state.bottom + wheelDeltaY / 5;
 
     if (nextPosition >= -5) {
       this.setState({ bottom: nextPosition })
