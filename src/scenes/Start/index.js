@@ -17,9 +17,11 @@ export default class StartScene extends Component {
   }
 
   handleScroll = ({ movementY }) => {
-    this.setState(({ bottom }) => ({
-      bottom: bottom + movementY * 3,
-    }))
+    const nextPosition = this.state.bottom + movementY * 3;
+
+    if (nextPosition >= -5) {
+      this.setState({ bottom: nextPosition })
+    }
   }
 
   render() {
