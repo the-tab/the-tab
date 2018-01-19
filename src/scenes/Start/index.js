@@ -30,7 +30,7 @@ export default class StartScene extends Component {
 
   handleScroll = ({ deltaY }) => {
     const element = document.querySelector('#bookmarks_dashboard');
-    const nextPosition = this.state.bottom + (-deltaY / 3);
+    const nextPosition = this.state.bottom + (deltaY / 3);
 
     if (element) {
       if (this.state.bottom > this.appearDistance / 2 && nextPosition <= this.appearDistance / 2) {
