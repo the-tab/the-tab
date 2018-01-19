@@ -19,8 +19,7 @@ export default class StartScene extends Component {
   appearDistance = 200;
 
   handleScroll = (e) => {
-    console.log(e);
-    const nextPosition = this.state.bottom + (-e.wheelDeltaY / 5);
+    const nextPosition = this.state.bottom + (-e.deltaY / 3);
 
     if (this.state.bottom > this.appearDistance && nextPosition <= this.appearDistance) {
       this.setState({
