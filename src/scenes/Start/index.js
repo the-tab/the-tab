@@ -16,21 +16,47 @@ export default class StartScene extends Component {
     document.documentElement.removeEventListener('wheel', this.handleScroll);
   }
 
-  handleScroll = ({ wheelDeltaY }) => {
-    const nextPosition = this.state.bottom + wheelDeltaY / 5;
+  appearDistance = 200;
 
-    if (nextPosition >= -5) {
-      this.setState({ bottom: nextPosition })
+  handleScroll = ({ wheelDeltaY }) => {
+    const nextPosition = this.state.bottom + (-wheelDeltaY / 5);
+
+    if (this.state.bottom > this.appearDistance && nextPosition <= this.appearDistance) {
+      this.setState({
+        bottom: (nextPosition - this.appearDistance) - (nextPosition - this.appearDistance),
+      });
+    } else if (nextPosition >= 0) {
+      if (this.state.bottom <= 0) {
+        this.setState({ bottom: nextPosition + this.appearDistance });
+      } else {
+        this.setState({ bottom: nextPosition });
+      }
+    }
+
+    const { innerHeight } = window;
+    const element = document.querySelector('#bookmarks_dashboard');
+
+    if (element) {
+      if (nextPosition < this.appearDistance) {
+        element.style.transition = '0.5s';
+      } else if (innerHeight - parseInt(element.style.top, 10) > this.appearDistance) {
+        element.style.transition = '0.15s';
+      }
     }
   }
 
   render() {
+    const opacity = Math.min(1 - (this.state.bottom / 500), 1);
+    const style = {
+      opacity,
+      transform: `scale(${Math.min(1 - (this.state.bottom / 10000), 1)})`,
+    };
     return (
       <div id="start_scene">
         <div id="start_scene_main_panel">
-          <h2>Scroll down</h2>
+          <h2 style={style}>Scroll down</h2>
         </div>
-        <Bookmarks bottom={this.state.bottom} />
+        <Bookmarks bottom={this.state.bottom} appearDistance={this.appearDistance} />
       </div>
     );
   }
