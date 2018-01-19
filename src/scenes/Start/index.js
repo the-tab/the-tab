@@ -18,10 +18,24 @@ export default class StartScene extends Component {
 
   appearDistance = 200;
 
-  handleScroll = (e) => {
-    const nextPosition = this.state.bottom + (-e.deltaY / 3);
+  animateScroll = (nextPosition) => {
+    const { innerHeight } = window;
+    const element = document.querySelector('#bookmarks_dashboard');
+    if (element) {
+      if (nextPosition >= this.appearDistance && this.state.bottom <= this.appearDistance * 2) {
+        console.log('!!!');
+        element.style.transition = '0.2s';
+      } else if (innerHeight - parseInt(element.style.top, 10) > this.appearDistance) {
+        element.style.transition = '0.1s';
+      }
+    }
+  }
 
-    if (this.state.bottom > this.appearDistance && nextPosition <= this.appearDistance) {
+  handleScroll = ({ deltaY }) => {
+    const nextPosition = this.state.bottom + (-deltaY / 3);
+    this.animateScroll(this.state.bottom)
+
+    if (this.state.bottom > this.appearDistance / 2 && nextPosition <= this.appearDistance / 2) {
       this.setState({
         bottom: (nextPosition - this.appearDistance) - (nextPosition - this.appearDistance),
       });
@@ -30,17 +44,6 @@ export default class StartScene extends Component {
         this.setState({ bottom: nextPosition + this.appearDistance });
       } else {
         this.setState({ bottom: nextPosition });
-      }
-    }
-
-    const { innerHeight } = window;
-    const element = document.querySelector('#bookmarks_dashboard');
-
-    if (element) {
-      if (nextPosition < this.appearDistance) {
-        element.style.transition = '0.5s';
-      } else if (innerHeight - parseInt(element.style.top, 10) > this.appearDistance) {
-        element.style.transition = '0s';
       }
     }
   }
