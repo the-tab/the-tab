@@ -16,7 +16,7 @@ export default class StartScene extends Component {
     document.documentElement.removeEventListener('wheel', this.handleScroll);
   }
 
-  appearDistance = 180;
+  appearDistance = 150;
 
   updateElementTransition = (transition) => {
     const element = document.querySelector('#bookmarks_dashboard');
