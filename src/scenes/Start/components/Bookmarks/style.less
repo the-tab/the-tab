@@ -1,9 +1,9 @@
 #bookmarks_dashboard {
-  width: 80vw;
+  width: 67vw;
   height: 800px;
   top: 100vh;
 
-  background: #311B92;
+  // background: #FFFFFF;
   border-radius: 3px;
 
   position: fixed;
@@ -11,4 +11,18 @@
 
   z-index: 100;
   transition: 0.5s;
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+
+  > section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    margin: 2px;
+  }
 }
