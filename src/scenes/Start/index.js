@@ -44,7 +44,7 @@ export default class StartScene extends Component {
           this.transitionTimeFreezed = true;
           setTimeout(() => {
             this.transitionTimeFreezed = false;
-          }, 400);
+          }, 500);
           this.setState({ bottom: nextPosition + this.appearDistance });
         } else if (!this.transitionTimeFreezed) {
           this.updateElementTransition('0s');
