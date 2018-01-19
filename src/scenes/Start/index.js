@@ -41,7 +41,7 @@ export default class StartScene extends Component {
       if (nextPosition < this.appearDistance) {
         element.style.transition = '0.5s';
       } else if (innerHeight - parseInt(element.style.top, 10) > this.appearDistance) {
-        element.style.transition = '0.1s';
+        element.style.transition = '0s';
       }
     }
   }
