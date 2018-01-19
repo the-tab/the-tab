@@ -7,7 +7,7 @@ import './ui-kit/theme';
 // services
 import * as firebase from './services/firebase';
 // scenes
-import BookmarksScene from './scenes/Bookmarks';
+import StartScene from './scenes/Start';
 
 export default class App extends Component {
   state = {
@@ -25,12 +25,13 @@ export default class App extends Component {
     if (this.state.ready) {
       return (
         <Switch>
-          <Route exact path="/" component={BookmarksScene} />
+          <Route exact path="/" component={StartScene} />
         </Switch>
       );
+    } else {
+      return (
+        <div>Loading...</div>
+      );
     }
-    return (
-      <div>Loading...</div>
-    );
   }
 }
