@@ -16,34 +16,40 @@ export default class StartScene extends Component {
     document.documentElement.removeEventListener('wheel', this.handleScroll);
   }
 
-  appearDistance = 200;
+  appearDistance = 150;
 
-  animateScroll = (nextPosition) => {
-    const { innerHeight } = window;
+  updateElementTransition = (transition) => {
     const element = document.querySelector('#bookmarks_dashboard');
+
     if (element) {
-      if (nextPosition >= this.appearDistance && this.state.bottom <= this.appearDistance * 2) {
-        console.log('!!!');
-        element.style.transition = '0.2s';
-      } else if (innerHeight - parseInt(element.style.top, 10) > this.appearDistance) {
-        element.style.transition = '0.1s';
+      if (element.style.transition !== transition) {
+        element.style.transition = transition;
       }
     }
   }
 
   handleScroll = ({ deltaY }) => {
+    const element = document.querySelector('#bookmarks_dashboard');
     const nextPosition = this.state.bottom + (-deltaY / 3);
-    this.animateScroll(this.state.bottom)
 
-    if (this.state.bottom > this.appearDistance / 2 && nextPosition <= this.appearDistance / 2) {
-      this.setState({
-        bottom: (nextPosition - this.appearDistance) - (nextPosition - this.appearDistance),
-      });
-    } else if (nextPosition >= 0) {
-      if (this.state.bottom <= 0) {
-        this.setState({ bottom: nextPosition + this.appearDistance });
-      } else {
-        this.setState({ bottom: nextPosition });
+    if (element) {
+      if (this.state.bottom > this.appearDistance / 2 && nextPosition <= this.appearDistance / 2) {
+        this.updateElementTransition('0.5s');
+        this.setState({
+          bottom: (nextPosition - this.appearDistance) - (nextPosition - this.appearDistance),
+        });
+      } else if (nextPosition >= 0) {
+        if (this.state.bottom <= 0) {
+          this.updateElementTransition('0.5s');
+          this.transitionTimeFreezed = true;
+          setTimeout(() => {
+            this.transitionTimeFreezed = false;
+          }, 400);
+          this.setState({ bottom: nextPosition + this.appearDistance });
+        } else if (!this.transitionTimeFreezed) {
+          this.updateElementTransition('0s');
+          this.setState({ bottom: nextPosition });
+        }
       }
     }
   }
