@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Switch, Route, NavLink, Redirect } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
+
+import { Input, Button } from '../../../../ui-kit';
 import './style.less';
 
 const LoginForm = ({ onSubmit }) => [
@@ -14,18 +16,20 @@ const LoginForm = ({ onSubmit }) => [
     onSubmit={onSubmit}
     key="form"
   >
-    <input
+    <Input
+      label="Email"
       type="email"
       name="email"
       placeholder="Your email"
     />
-    <input
+    <Input
+      label="Password"
       type="password"
       name="password"
       placeholder="Your password"
     />
 
-    <button type="submit">Log In</button>
+    <Button type="submit" primary>Log In</Button>
   </form>
 ]
 
@@ -40,23 +44,26 @@ const RegisterForm = ({ onSubmit }) => [
     onSubmit={onSubmit}
     key="form"
   >
-    <input
+    <Input
+      label="Email"
       type="email"
       name="email"
       placeholder="Your email"
     />
-    <input
+    <Input
+      label="Password"
       type="password"
       name="password"
       placeholder="Your password"
     />
-    <input
+    <Input
+      label="Repeat password"
       type="password"
       name="passwordRepeat"
       placeholder="Repeat your password"
     />
 
-    <button type="submit">Sign Up</button>
+    <Button type="submit" primary>Sign Up</Button>
   </form>
 ]
 

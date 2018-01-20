@@ -9,6 +9,7 @@ import './ui-kit/theme';
 import * as firebase from './services/firebase';
 // scenes
 import StartScene from './scenes/Start';
+import AuthScene from './scenes/Auth';
 
 @inject(a => a)
 @observer
@@ -24,6 +25,7 @@ export default class App extends Component {
       return (
         <Switch>
           <Route exact path="/" component={StartScene} />
+          <Route path="/auth" component={AuthScene} />
         </Switch>
       );
     } else {
