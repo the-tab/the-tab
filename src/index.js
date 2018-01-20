@@ -2,13 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { AppContainer } from 'react-hot-loader';
+import { Provider } from 'mobx-react';
+import stores from './stores';
 
 import App from './App';
 
 const render = Component => void ReactDOM.render(
   <AppContainer>
     <BrowserRouter>
-      <Component />
+      <Provider {...stores}>
+        <Component />
+      </Provider>
     </BrowserRouter>
   </AppContainer>,
   document.getElementById('root'),

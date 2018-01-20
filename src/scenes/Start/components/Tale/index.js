@@ -11,10 +11,8 @@ const Tale = ({ title, description, image }) => (
     <section className="description">
       { description }
     </section>
-    <section className="image">
-
-    </section>
+    <section className="image" />
   </div>
-)
+);
 
 export default Tale;
