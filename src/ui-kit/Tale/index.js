@@ -3,13 +3,15 @@ import isUrl from 'is-url';
 
 import './style.less';
 
-const getImageStyle = (url) => ({
+const getImageStyle = url => ({
   background: `url(${url})`,
   backgroundPosition: 'center',
   backgroundSize: 'cover',
-})
+});
 
-const Tale = ({ title, description, image, labelColor }) => {
+const Tale = ({
+  title, description, image, labelColor,
+}) => {
   return (
     <div className="tale">
       <section className="header">
@@ -20,7 +22,7 @@ const Tale = ({ title, description, image, labelColor }) => {
       </section>
       { description && (
         <section className="description">
-          { description.substring(0, 70) + '...' }
+          { `${description.substring(0, 70)}...` }
         </section>
       )}
       { image && (
@@ -28,6 +30,6 @@ const Tale = ({ title, description, image, labelColor }) => {
       )}
     </div>
   );
-}
+};
 
 export default Tale;
