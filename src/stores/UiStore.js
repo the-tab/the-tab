@@ -1,10 +1,11 @@
 import { extendObservable } from 'mobx';
-import { createBrowserHistory } from 'history';
+import { createHashHistory } from 'history';
 
 export default class UiStore {
   constructor(state = {}) {
     extendObservable(this, {
-      history: createBrowserHistory(),
+      history: createHashHistory(),
+      title: 'The Tab',
       ready: false,
     }, state);
   }

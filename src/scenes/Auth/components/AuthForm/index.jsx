@@ -1,20 +1,13 @@
 import React, { Component } from 'react';
 import { Switch, Route, NavLink, Redirect } from 'react-router-dom';
-import { Helmet } from 'react-helmet';
 
 import { Input, Button } from '../../../../ui-kit';
 import './style.less';
 
-const LoginForm = ({ onSubmit }) => [
-  <Helmet key="helmet">
-    <meta charSet="utf-8" />
-    <title>Bazar Ukraine - Sign In</title>
-    <meta name="theme-color" content="#2196F3" />
-  </Helmet>,
+const LoginForm = ({ onSubmit }) => (
   <form
     className="auth-form-credentials fadeIn animated"
     onSubmit={onSubmit}
-    key="form"
   >
     <Input
       label="Email"
@@ -31,18 +24,12 @@ const LoginForm = ({ onSubmit }) => [
 
     <Button type="submit" primary>Log In</Button>
   </form>
-]
+)
 
-const RegisterForm = ({ onSubmit }) => [
-  <Helmet key="helmet">
-    <meta charSet="utf-8" />
-    <title>Bazar Ukraine - Sign Up</title>
-    <meta name="theme-color" content="#2196F3" />
-  </Helmet>,
+const RegisterForm = ({ onSubmit }) => (
   <form
     className="auth-form-credentials fadeIn animated"
     onSubmit={onSubmit}
-    key="form"
   >
     <Input
       label="Email"
@@ -65,7 +52,7 @@ const RegisterForm = ({ onSubmit }) => [
 
     <Button type="submit" primary>Sign Up</Button>
   </form>
-]
+)
 
 const AuthForm = ({ handleLogin, handleRegister, ...props }) => (
   <div id="auth-form-container">

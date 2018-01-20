@@ -1,0 +1,16 @@
+{
+  "manifest_version": 2,
+  "name": "Extension",
+  "description": "One very productive extension",
+  "version": "0.1",
+  "incognito": "split",
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "*://*.google.com/"
+  ],
+  "content_security_policy": "script-src 'self' https://ajax.googleapis.com https://apis.google.com; object-src 'self'"
+}

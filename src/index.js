@@ -3,34 +3,35 @@ import ReactDOM from 'react-dom';
 import { Router } from 'react-router-dom';
 import { AppContainer } from 'react-hot-loader';
 import { Provider } from 'mobx-react';
-import { createBrowserHistory } from 'history';
+import { createHashHistory } from 'history';
 
 import stores from './stores';
-
 import App from './App';
 
-const history = createBrowserHistory();
+const history = createHashHistory();
 
-const render = Component => void ReactDOM.render(
+ReactDOM.render(
   <AppContainer>
     <Router history={history}>
       <Provider {...stores}>
-        <Component />
+        <App />
       </Provider>
     </Router>
   </AppContainer>,
   document.getElementById('root'),
 );
 
-render(App);
+chrome.webRequest.onBeforeRequest.addListener((e) => {
+  const path = e.url.split('/').slice(-1)[0];
+  const exclude = ['index.html', 'bundle.js', 'bundle.js.map'];
 
-if (module.hot) {
-  module.hot.accept('./App.js', () => {
-    console.log('Accepting the updated APP module!');
-    render(require('./App').default);
-  });
-}
-
-
-// disable Hot Loader warnings
-// global.__REACT_HOT_LOADER__.warnings = false;
+  if(!exclude.includes(path)) {
+    return {
+      redirectUrl: "chrome-extension://" + chrome.runtime.id + "/index.html"
+    }
+  }
+}, {
+  urls: ["chrome-extension://" + chrome.runtime.id + "/*"]
+}, [
+  "blocking"
+]);

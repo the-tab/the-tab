@@ -3,18 +3,12 @@ const webpack = require('webpack');
 const BabiliPlugin = require('babili-webpack-plugin');
 
 const config = {
-  entry: ['babel-polyfill', 'react-hot-loader/patch', './src/index.js'],
+  entry: ['babel-polyfill', './src/index.js'],
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
-    publicPath: '/'
   },
   devtool: 'cheap-module-source-map',
-  devServer: {
-    contentBase: './dist',
-    hot: true,
-    historyApiFallback: true
-  },
   module: {
     loaders: [
       {
@@ -35,9 +29,7 @@ const config = {
   resolve: {
     extensions: ['.js', '.jsx', '.less']
   },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-  ],
+  plugins: [],
 };
 
 if (process.env.NODE_ENV === 'production') {

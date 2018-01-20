@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Switch, Route, withRouter, Redirect } from 'react-router-dom';
 import { observer, inject } from 'mobx-react';
+import { Helmet } from 'react-helmet';
 
 import 'normalize.css';
 import './ui-kit/theme';
@@ -25,10 +26,15 @@ export default class App extends Component {
     if (this.props.ui.ready) {
       if (this.props.user.authorized) {
         return (
-          <Switch>
-            <Redirect from="/auth" to="/" />
-            <Route exact path="/" component={StartScene} />
-          </Switch>
+          <div>
+            <Helmet>
+              <title>{ this.props.ui.title }</title>
+            </Helmet>
+            <Switch>
+              <Redirect from="/auth" to="/" />
+              <Route exact path="/" component={StartScene} />
+            </Switch>
+          </div>
         );
       } else {
         return (
