@@ -29,7 +29,7 @@ export default class Bookmarks extends Component {
                 if (i % 3 === 0) {
                   if (b.folder) {
                     return (
-                      <div onClick={() => store.bookmarks = b.children}>
+                      <div onClick={() => store.bookmarks = b.children} key={i}>
                         <Tale
                           title={b.title}
                           labelColor="#172B4D"
@@ -60,7 +60,7 @@ export default class Bookmarks extends Component {
                 if (i % 3 === 1) {
                   if (b.folder) {
                     return (
-                      <div onClick={() => store.bookmarks = b.children}>
+                      <div onClick={() => store.bookmarks = b.children} key={i}>
                         <Tale
                           title={b.title}
                           labelColor="#172B4D"
@@ -90,7 +90,7 @@ export default class Bookmarks extends Component {
                 if (i % 3 === 2) {
                   if (b.folder) {
                     return (
-                      <div onClick={() => store.bookmarks = b.children}>
+                      <div onClick={() => store.bookmarks = b.children} key={i}>
                         <Tale
                           title={b.title}
                           labelColor="#172B4D"

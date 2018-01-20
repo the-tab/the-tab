@@ -25,9 +25,6 @@ const Tale = ({
           { `${description.substring(0, 70)}...` }
         </section>
       )}
-      { image && (
-        <section className="image" />
-      )}
     </div>
   );
 };
