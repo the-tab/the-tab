@@ -8,11 +8,10 @@ class BookmarksStore {
   processedGraphs = {};
 
   @action setBookmarks = async (bookmarks) => {
-    if (JSON.stringify(bookmarks) == JSON.stringify(this.rawBookmarks)) {
+    if (JSON.stringify(bookmarks) !== JSON.stringify(this.rawBookmarks)) {
       this.rawBookmarks = bookmarks;
       this.bookmarks = await this.processBookmarksTree(bookmarks);
 
-      console.log(this.bookmarks);
       this.cacheBookmarks();
     }
   }
