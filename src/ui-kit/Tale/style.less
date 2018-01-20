@@ -1,4 +1,4 @@
-@import "../../../../ui-kit/theme/variables.less";
+@import "../theme/variables.less";
 
 .tale {
   height: auto;
@@ -13,6 +13,12 @@
   flex-direction: column;
   align-items: stretch;
   justify-content: flex-start;
+
+  cursor: pointer;
+  user-select: none;
+
+  .hover-effect;
+  .active-effect;
 
   > section {
     &:not(:first-child) {

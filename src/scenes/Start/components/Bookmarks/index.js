@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import './style.less';
-import Tale from '../Tale';
+import Tale from '../../../../ui-kit/Tale';
 
 export default class Bookmarks extends Component {
   render() {
