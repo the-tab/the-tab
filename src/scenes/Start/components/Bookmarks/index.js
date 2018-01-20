@@ -11,8 +11,8 @@ import store from './store';
 export default class Bookmarks extends Component {
   componentWillMount() {
     chrome.bookmarks.getTree((bookmarks) => {
-      store.setBookmarks(bookmarks[0].children[0].children)
-    })
+      store.setBookmarks(bookmarks[0].children[0].children);
+    });
   }
 
   render() {
@@ -32,7 +32,7 @@ export default class Bookmarks extends Component {
                       title={b.title}
                     />
                   </a>
-                )
+                );
               } else {
                 return null;
               }
@@ -50,7 +50,7 @@ export default class Bookmarks extends Component {
                       title={b.title}
                     />
                   </a>
-                )
+                );
               } else {
                 return null;
               }
@@ -67,7 +67,7 @@ export default class Bookmarks extends Component {
                       title={b.title}
                     />
                   </a>
-                )
+                );
               } else {
                 return null;
               }

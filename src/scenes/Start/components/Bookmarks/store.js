@@ -19,7 +19,7 @@ class BookmarksStore {
 
   processBookmarksTree = async (tree) => {
     const promises = [];
-    
+
     await tree.forEach((b) => {
       if (b.children) {
         promises.push(this.processBookmarksTree(b.children).then(children => ({
@@ -27,7 +27,7 @@ class BookmarksStore {
           title: b.title,
           id: b.id,
           children,
-        })))
+        })));
       } else {
         promises.push(getPageInfo(b.url).then(meta => ({
           folder: false,
@@ -35,9 +35,9 @@ class BookmarksStore {
           id: b.id,
           url: b.url,
           meta,
-        })))
+        })));
       }
-    })
+    });
 
     return await Promise.all(promises);
   };
