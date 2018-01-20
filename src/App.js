@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, withRouter, Redirect } from 'react-router-dom';
 import { observer, inject } from 'mobx-react';
 
 import 'normalize.css';
@@ -11,6 +11,7 @@ import * as firebase from './services/firebase';
 import StartScene from './scenes/Start';
 import AuthScene from './scenes/Auth';
 
+@withRouter
 @inject(a => a)
 @observer
 export default class App extends Component {
@@ -22,12 +23,24 @@ export default class App extends Component {
 
   render() {
     if (this.props.ui.ready) {
-      return (
-        <Switch>
-          <Route exact path="/" component={StartScene} />
-          <Route path="/auth" component={AuthScene} />
-        </Switch>
-      );
+      if (this.props.user.authorized) {
+        return (
+          <Switch>
+            <Redirect from="/auth" to="/" />
+            <Route exact path="/" component={StartScene} />
+          </Switch>
+        );
+      } else {
+        return (
+          <div>
+            <Redirect exact to="/auth/login" />
+            <Route
+              path="/auth"
+              component={AuthScene}
+            />
+          </div>
+        );
+      }
     } else {
       return (
         <div>Loading...</div>

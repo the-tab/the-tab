@@ -1,19 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
+import { Router } from 'react-router-dom';
 import { AppContainer } from 'react-hot-loader';
 import { Provider } from 'mobx-react';
+import { createBrowserHistory } from 'history';
+
 import stores from './stores';
 
 import App from './App';
 
+const history = createBrowserHistory();
+
 const render = Component => void ReactDOM.render(
   <AppContainer>
-    <BrowserRouter>
+    <Router history={history}>
       <Provider {...stores}>
         <Component />
       </Provider>
-    </BrowserRouter>
+    </Router>
   </AppContainer>,
   document.getElementById('root'),
 );

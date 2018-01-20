@@ -2,11 +2,8 @@ import React, { Component } from 'react';
 import getFormData from 'get-form-data';
 
 import AuthForm from './components/AuthForm';
-import authorizedRedirect from '../../decorators/authorizedRedirect';
-
 import * as auth from '../../services/firebase/auth';
 
-@authorizedRedirect('/')
 export default class Auth extends Component {
   handleRegister = async (e) => {
     e.preventDefault();
