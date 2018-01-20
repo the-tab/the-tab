@@ -24,3 +24,4 @@ globals:
   fetch: 0
   FileReader: 0
   navigator: 0
+  chrome: 0

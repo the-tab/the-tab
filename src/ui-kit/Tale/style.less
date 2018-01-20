@@ -2,6 +2,7 @@
 
 .tale {
   height: auto;
+  align-items: stretch;
 
   // background: #FFFFFF;
   .inverted;
@@ -34,6 +35,10 @@
     font-size: 14px;
 
     &.header {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
 
       > .avatar {
         width: 25px;
@@ -41,6 +46,8 @@
 
         background: #0052CC;
         color: white;
+
+        flex-shrink: 0;
 
         margin-right: 12px;
         border-radius: 1px;
@@ -53,6 +60,13 @@
         font-weight: 300;
       }
 
+      > span {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      font-size: 14px;
       font-weight: 600;
     }
 

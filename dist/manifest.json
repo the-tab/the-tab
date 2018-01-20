@@ -10,6 +10,7 @@
   "permissions": [
     "webRequest",
     "webRequestBlocking",
+    "bookmarks",
     "*://*.google.com/"
   ],
   "content_security_policy": "script-src 'self' https://ajax.googleapis.com https://apis.google.com; object-src 'self'"

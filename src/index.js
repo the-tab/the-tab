@@ -25,13 +25,13 @@ chrome.webRequest.onBeforeRequest.addListener((e) => {
   const path = e.url.split('/').slice(-1)[0];
   const exclude = ['index.html', 'bundle.js', 'bundle.js.map'];
 
-  if(!exclude.includes(path)) {
+  if (!exclude.includes(path)) {
     return {
-      redirectUrl: "chrome-extension://" + chrome.runtime.id + "/index.html"
-    }
+      redirectUrl: `chrome-extension://${chrome.runtime.id}/index.html`,
+    };
   }
 }, {
-  urls: ["chrome-extension://" + chrome.runtime.id + "/*"]
+  urls: [`chrome-extension://${chrome.runtime.id}/*`],
 }, [
-  "blocking"
+  'blocking',
 ]);
