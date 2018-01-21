@@ -18,7 +18,9 @@ export const updateElementTransition = (element, transition) => {
 export const handleScroll = ({ deltaY }, currentPosition, appearDistance, element) => {
   const nextPosition = currentPosition + (deltaY / 3);
 
-  const overscrolled = (window.innerHeight - (window.innerHeight - nextPosition)) > (element.scrollHeight + 10);
+  const overscrolled = (
+    window.innerHeight - (window.innerHeight - nextPosition)
+  ) > (element.scrollHeight + 10);
 
   if (currentPosition > appearDistance && nextPosition <= appearDistance) {
     updateElementTransition(element, '0.5s');

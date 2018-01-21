@@ -4,7 +4,9 @@ const getMeta = (doc, query, attr) => {
     return element && element[attr];
   } else {
     const element = doc.querySelector(query);
-    return element && (element.content || element.innerText) && (element.content || element.innerText).trim();
+    return element
+      && (element.content || element.innerText)
+      && (element.content || element.innerText).trim();
   }
   // && (element.content || element.innerText).replace(/[^\x00-\x7F]/g, "").trim();
 };

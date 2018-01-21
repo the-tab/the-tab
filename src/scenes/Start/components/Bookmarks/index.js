@@ -1,11 +1,46 @@
 import React, { Component } from 'react';
 import { observer } from 'mobx-react';
-import { NavLink } from 'react-router-dom';
 
 import './style.less';
+import store from './store';
+
 import Tale from '../../../../ui-kit/Tale';
 
-import store from './store';
+
+const renderTale = (bookmark, index, position) => {
+  if (index % 3 === position) {
+    if (bookmark.folder) {
+      return (
+        <div
+          onClick={() => { store.bookmarks = bookmark.children; }}
+          key={index}
+          role="button"
+          tabIndex={index}
+        >
+          <Tale
+            title={bookmark.title}
+            labelColor="#172B4D"
+          />
+        </div>
+      );
+    } else {
+      return (
+        <a
+          href={bookmark.url}
+          key={index}
+        >
+          <Tale
+            title={bookmark.title}
+            description={bookmark.meta && bookmark.meta.description}
+            image={bookmark.meta && bookmark.meta.image}
+          />
+        </a>
+      );
+    }
+  } else {
+    return null;
+  }
+};
 
 @observer
 export default class Bookmarks extends Component {
@@ -20,99 +55,16 @@ export default class Bookmarks extends Component {
       return (
         <div
           id="bookmarks_dashboard"
-          style={{ top: window.innerHeight - this.props.bottom }}
         >
           <section>
+            { store.bookmarks.map((b, i) => renderTale(b, i, 0)) }
+          </section>
 
-            {
-              store.bookmarks.map((b, i) => {
-                if (i % 3 === 0) {
-                  if (b.folder) {
-                    return (
-                      <div onClick={() => store.bookmarks = b.children} key={i}>
-                        <Tale
-                          title={b.title}
-                          labelColor="#172B4D"
-                        />
-                      </div>
-                    );
-                  } else {
-                    return (
-                      <a href={b.url} key={i}>
-                        <Tale
-                          title={b.title}
-                          description={b.meta && b.meta.description}
-                          image={b.meta && b.meta.image}
-                        />
-                      </a>
-                    );
-                  }
-                } else {
-                  return null;
-                }
-              })
-            }
-
+          <section>
+            { store.bookmarks.map((b, i) => renderTale(b, i, 1)) }
           </section>
           <section>
-            {
-              store.bookmarks.map((b, i) => {
-                if (i % 3 === 1) {
-                  if (b.folder) {
-                    return (
-                      <div onClick={() => store.bookmarks = b.children} key={i}>
-                        <Tale
-                          title={b.title}
-                          labelColor="#172B4D"
-                        />
-                      </div>
-                    );
-                  } else {
-                    return (
-                      <a href={b.url} key={i}>
-                        <Tale
-                          title={b.title}
-                          description={b.meta && b.meta.description}
-                          image={b.meta && b.meta.image}
-                        />
-                      </a>
-                    );
-                  }
-                } else {
-                  return null;
-                }
-              })
-            }
-          </section>
-          <section>
-            {
-              store.bookmarks.map((b, i) => {
-                if (i % 3 === 2) {
-                  if (b.folder) {
-                    return (
-                      <div onClick={() => store.bookmarks = b.children} key={i}>
-                        <Tale
-                          title={b.title}
-                          labelColor="#172B4D"
-                        />
-                      </div>
-                    );
-                  } else {
-                    return (
-                      <a href={b.url} key={i}>
-                        <Tale
-                          title={b.title}
-                          description={b.meta && b.meta.description}
-                          image={b.meta && b.meta.image}
-                        />
-                      </a>
-                    );
-                  }
-                } else {
-                  return null;
-                }
-              })
-            }
+            { store.bookmarks.map((b, i) => renderTale(b, i, 2)) }
           </section>
         </div>
       );

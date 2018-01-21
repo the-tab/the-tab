@@ -38,7 +38,7 @@ class BookmarksStore {
       }
     });
 
-    return await Promise.all(promises);
+    return Promise.all(promises);
   };
 
   cacheBookmarks = () => {
