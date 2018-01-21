@@ -20,6 +20,7 @@ const renderTale = (bookmark, index, position) => {
           <Tale
             title={bookmark.title}
             labelColor="#172B4D"
+            isFolder
           />
         </div>
       );

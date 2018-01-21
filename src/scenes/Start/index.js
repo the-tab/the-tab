@@ -7,9 +7,6 @@ export default class StartScene extends Component {
   render() {
     return (
       <div id="start_scene">
-        <div id="start_scene_main_panel">
-          <h2>Scroll down</h2>
-        </div>
         <Bookmarks />
       </div>
     );

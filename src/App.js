@@ -8,6 +8,10 @@ import './ui-kit/theme';
 
 // services
 import * as firebase from './services/firebase';
+
+// main Dashboard
+import Dashboard from './components/Dashboard';
+
 // scenes
 import StartScene from './scenes/Start';
 import AuthScene from './scenes/Auth';
@@ -26,7 +30,7 @@ export default class App extends Component {
     if (this.props.ui.ready) {
       if (this.props.user.authorized) {
         return (
-          <div>
+          <Dashboard>
             <Helmet>
               <title>{ this.props.ui.title }</title>
             </Helmet>
@@ -34,7 +38,7 @@ export default class App extends Component {
               <Redirect from="/auth" to="/" />
               <Route exact path="/" component={StartScene} />
             </Switch>
-          </div>
+          </Dashboard>
         );
       } else {
         return (

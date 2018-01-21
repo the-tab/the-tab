@@ -10,12 +10,12 @@ const getImageStyle = url => ({
 });
 
 const Tale = ({
-  title, description, image, labelColor,
+  title, description, image, isFolder,
 }) => {
   return (
     <div className="tale">
       <section className="header">
-        <div className="avatar" style={isUrl(image) ? getImageStyle(image) : { backgroundColor: labelColor }}>
+        <div className={`avatar ${isFolder && 'folder'}`} style={isUrl(image) ? getImageStyle(image) : {}}>
           { !isUrl(image) && title && title.charAt(0).toUpperCase() }
         </div>
         <span>{ title }</span>
