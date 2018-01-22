@@ -7,7 +7,7 @@ import { createHashHistory } from 'history';
 import Packager from './Packager';
 
 class Renderer {
-  history = createHashHistory();
+  history = window.router = createHashHistory();
 
   render = (dest) => {
     ReactDOM.render(
@@ -15,7 +15,7 @@ class Renderer {
         <Router history={this.history}>
           <Switch>
             {
-            Packager.modules.map(module => (
+            Packager.packages.map(module => (
               <Route
                 path={module.manifest.route}
                 component={module}

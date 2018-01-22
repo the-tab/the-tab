@@ -22,7 +22,12 @@ const config = {
       },
       {
         test: /.less/,
-        loaders: ['style-loader', 'css-loader', 'less-loader']
+        loaders: ['style-loader', {
+          loader: 'css-loader',
+          options: {
+            modules: true,
+          }
+        }, 'less-loader']
       }
     ]
   },
@@ -30,6 +35,7 @@ const config = {
     extensions: ['.js', '.jsx', '.less'],
     alias: {
       Source: path.resolve(__dirname, 'src'),
+      'the-tab-module-bookmarks': path.resolve(__dirname, '../the-tab-module-bookmarks'),
     }
   },
   plugins: [],
