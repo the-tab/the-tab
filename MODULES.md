@@ -4,7 +4,7 @@
 ### Core modules
 Prefix: `the-tab-core-*`
 
-Core modules included by default. Basic functional of extension.
+Core modules included by default. Basic extension functional.
 
 Available core modules:
 
