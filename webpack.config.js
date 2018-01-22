@@ -29,11 +29,11 @@ const config = {
   resolve: {
     extensions: ['.js', '.jsx', '.less'],
     alias: {
-      Services: path.resolve(__dirname, 'src/services'),
-      Scenes: path.resolve(__dirname, 'src/scenes'),
-      Utils: path.resolve(__dirname, 'src/utils'),
-      UiKit: path.resolve(__dirname, 'src/uiKit'),
-      Variables: path.resolve(__dirname, 'src/uiKit/theme/variables.less'),
+      Services: path.resolve(__dirname, 'src/core/services'),
+      Scenes: path.resolve(__dirname, 'src/core/scenes'),
+      Utils: path.resolve(__dirname, 'src/core/utils'),
+      UiKit: path.resolve(__dirname, 'src/core/uiKit'),
+      Variables: path.resolve(__dirname, 'src/core/uiKit/theme/variables.less'),
     }
   },
   plugins: [],
