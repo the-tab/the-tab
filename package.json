@@ -45,6 +45,7 @@
     "webpack-dev-server": "^2.11.0"
   },
   "dependencies": {
+    "config": "^1.29.2",
     "firebase": "^4.8.2",
     "firebase-tools": "^3.17.0",
     "get-form-data": "^2.0.0",
@@ -52,7 +53,6 @@
     "is-url": "^1.2.2",
     "mobx": "^3.4.1",
     "mobx-react": "^4.3.5",
-    "nconf": "^0.10.0",
     "normalize.css": "^7.0.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
