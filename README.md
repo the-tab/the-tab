@@ -1,13 +1,11 @@
-# Extension project
+# The Tab
+
+> A hackable Chrome extension
 
 ### Install
 
-1. `npm i`
-2. `npm start`
-3. **Profit**
+Make sure you have *Node.js* and *npm* installed
 
-### Stack
-- React.js
-- React-Router
-- MobX
-- JSS / LESS
+1. Clone repo
+2. Run `npm i`
+3. Run `npm run watch` to start development or `npm run build` to build production bundle
