@@ -1,7 +1,7 @@
-import Modules from './core/Modules';
+import Packager from './core/Packager';
 import Renderer from './core/Renderer';
 
 import testModule from './modules/test';
 
-Modules.installModule(testModule);
+Packager.registerPackage(testModule);
 Renderer.render(document.querySelector('#root'));

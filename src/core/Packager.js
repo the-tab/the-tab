@@ -1,7 +1,7 @@
 class Modules {
   modules = [];
 
-  installModule = (module) => {
+  registerPackage = (module) => {
     this.modules.push(module);
   }
 }
