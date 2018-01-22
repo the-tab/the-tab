@@ -7,6 +7,6 @@ export default class TestModule extends Component {
     console.log('TEST MODULE RENDERED!');
     return (
       <div>MODULE RENDERED</div>
-    )
+    );
   }
 }
