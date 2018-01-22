@@ -4,7 +4,7 @@
 
 ### Install
 
-Make sure you have *Node.js* and *npm* installed
+Make sure you have **Node.js** and **npm** installed
 
 1. Clone repo
 2. Run `npm i`

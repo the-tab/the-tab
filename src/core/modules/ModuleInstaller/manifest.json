@@ -1,0 +1,6 @@
+{
+  "name": "module-installer",
+  "title": "Install module",
+  "route": "/modules",
+  "permissions": []
+}

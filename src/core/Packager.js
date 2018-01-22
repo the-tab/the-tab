@@ -3,11 +3,11 @@ import shortId from 'shortid';
 class Packager {
   constructor() {
     this.packages = [
-      require('./modules/PackageInstaller').default,
+      require('./modules/ModuleInstaller').default,
     ];
   }
 
-  registerPackage = (module) => {
+  installModule = (module) => {
     module.id = shortId();
     this.packages.push(module);
   }

@@ -1,6 +1,0 @@
-{
-  "name": "package-installer",
-  "title": "Install package",
-  "route": "/packages",
-  "permissions": []
-}

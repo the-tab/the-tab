@@ -6,12 +6,12 @@ import styles from './styles.less';
 import store from './store';
 
 @observer
-export default class PackageInstaller extends Component {
+export default class ModuleInstaller extends Component {
   static manifest = require('./manifest.json');
-  static id = 'core-package-installer';
+  static id = 'core-module-installer';
 
   componentWillMount() {
-    store.getPackages();
+    store.getModules();
   }
 
   render() {
@@ -29,7 +29,7 @@ export default class PackageInstaller extends Component {
         </div>
 
         <div className={styles.list}>
-          { store.all.map((p, i) => (
+          { store.modules.map((p, i) => (
             <div className={styles.listItem} key={i}>{ p.package.name }</div>
           )) }
         </div>

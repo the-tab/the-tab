@@ -6,5 +6,5 @@ import Renderer from './core/Renderer';
 
 import TheBookmarks from 'the-tab-module-bookmarks';
 
-Packager.registerPackage(TheBookmarks);
+Packager.installModule(TheBookmarks);
 Renderer.render(document.querySelector('#root'));
