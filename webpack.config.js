@@ -27,7 +27,14 @@ const config = {
     ]
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.less']
+    extensions: ['.js', '.jsx', '.less'],
+    alias: {
+      Services: path.resolve(__dirname, 'src/services'),
+      Scenes: path.resolve(__dirname, 'src/scenes'),
+      Utils: path.resolve(__dirname, 'src/utils'),
+      UiKit: path.resolve(__dirname, 'src/uiKit'),
+      Variables: path.resolve(__dirname, 'src/uiKit/theme/variables.less'),
+    }
   },
   plugins: [],
 };

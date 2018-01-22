@@ -1,5 +1,7 @@
 extends: airbnb
 parser: babel-eslint
+settings:
+  import/resolver: webpack
 rules:
   jsx-a11y/click-events-have-key-events: 0
   react/jsx-filename-extension: 0

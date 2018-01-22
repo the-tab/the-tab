@@ -4,17 +4,13 @@ import { observer, inject } from 'mobx-react';
 import { Helmet } from 'react-helmet';
 
 import 'normalize.css';
-import './ui-kit/theme';
+import 'UiKit/theme';
 
 // services
-import * as firebase from './services/firebase';
-
-// main Dashboard
-import Dashboard from './components/Dashboard';
+import * as firebase from 'Services/firebase';
 
 // scenes
-import StartScene from './scenes/Start';
-import AuthScene from './scenes/Auth';
+import AuthScene from 'Scenes/Auth';
 
 @withRouter
 @inject(a => a)
@@ -30,15 +26,14 @@ export default class App extends Component {
     if (this.props.ui.ready) {
       if (this.props.user.authorized) {
         return (
-          <Dashboard>
+          <div>
             <Helmet>
               <title>{ this.props.ui.title }</title>
             </Helmet>
             <Switch>
               <Redirect from="/auth" to="/" />
-              <Route exact path="/" component={StartScene} />
             </Switch>
-          </Dashboard>
+          </div>
         );
       } else {
         return (

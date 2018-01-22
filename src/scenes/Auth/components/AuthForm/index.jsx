@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Switch, Route, NavLink, Redirect } from 'react-router-dom';
 
-import { Input, Button } from '../../../../ui-kit';
+import { Input, Button } from 'UiKit';
 import './style.less';
 
 const LoginForm = ({ onSubmit }) => (
