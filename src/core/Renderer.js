@@ -10,17 +10,12 @@ class Renderer {
   history = window.router = createHashHistory();
 
   render = (dest) => {
-    const packages = [
-      ...Packager.coreModules,
-      ...Packager.modules,
-    ];
-
     ReactDOM.render(
       (
         <Router history={this.history}>
           <Switch>
-          {
-            packages.map(module => (
+            {
+            Packager.modules.map(module => (
               <Route
                 path={module.manifest.route}
                 component={module}

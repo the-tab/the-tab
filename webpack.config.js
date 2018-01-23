@@ -36,7 +36,6 @@ const config = {
     alias: {
       src: path.resolve(__dirname, 'src'),
       root: path.resolve(__dirname, '/'),
-      '@the-tab/the-tab-core-bookmarks': path.resolve(__dirname, '../the-tab-core-bookmarks'),
     }
   },
   plugins: [],
@@ -49,6 +48,8 @@ if (process.env.NODE_ENV === 'production') {
     }),
     new BabiliPlugin()
   );
+} else {
+  config.resolve.alias['@the-tab/the-tab-core-bookmarks'] = path.resolve(__dirname, '../the-tab-core-bookmarks');
 }
 
 module.exports = config;
