@@ -4,9 +4,9 @@
   "description": "",
   "main": "dist/index.html",
   "scripts": {
-    "watch": "node_modules/.bin/webpack --watch --colors --progress",
+    "watch": "npx webpack --watch --colors --progress",
     "build": "npx cross-env NODE_ENV=production npx webpack --progress",
-    "lint": "node_modules/.bin/eslint src"
+    "lint": "npx eslint src"
   },
   "repository": {
     "type": "git",

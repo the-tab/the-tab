@@ -1,15 +1,10 @@
-import shortId from 'shortid';
-
 class Packager {
   constructor() {
-    this.packages = [
+    this.coreModules = [
       require('./modules/ModuleInstaller').default,
+      require('@the-tab/the-tab-core-bookmarks').default,
     ];
-  }
-
-  installModule = (module) => {
-    module.id = shortId();
-    this.packages.push(module);
+    this.modules = [];
   }
 }
 

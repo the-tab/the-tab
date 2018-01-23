@@ -34,8 +34,9 @@ const config = {
   resolve: {
     extensions: ['.js', '.jsx', '.less'],
     alias: {
-      Source: path.resolve(__dirname, 'src'),
-      'the-tab-core-bookmarks': path.resolve(__dirname, '../the-tab-core-bookmarks'),
+      src: path.resolve(__dirname, 'src'),
+      root: path.resolve(__dirname, '/'),
+      '@the-tab/the-tab-core-bookmarks': path.resolve(__dirname, '../the-tab-core-bookmarks'),
     }
   },
   plugins: [],

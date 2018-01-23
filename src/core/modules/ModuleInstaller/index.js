@@ -3,16 +3,11 @@ import { observer } from 'mobx-react';
 import * as Icon from 'react-feather';
 
 import styles from './styles.less';
-import store from './store';
 
 @observer
 export default class ModuleInstaller extends Component {
   static manifest = require('./manifest.json');
   static id = 'core-module-installer';
-
-  componentWillMount() {
-    store.getModules();
-  }
 
   render() {
     return (
@@ -28,11 +23,11 @@ export default class ModuleInstaller extends Component {
           <div className={styles.panelItem}>Core</div>
         </div>
 
-        <div className={styles.list}>
+        {/* <div className={styles.list}>
           { store.modules.map((p, i) => (
             <div className={styles.listItem} key={i}>{ p.package.name }</div>
           )) }
-        </div>
+        </div> */}
 
       </div>
     );
