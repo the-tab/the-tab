@@ -19,15 +19,15 @@ class Renderer {
       (
         <Router history={this.history}>
           <Switch>
-            {
-          packages.map(module => (
-            <Route
-              path={module.manifest.route}
-              component={module}
-              key={module.id}
-            />
-          ))
-        }
+          {
+            packages.map(module => (
+              <Route
+                path={module.manifest.route}
+                component={module}
+                key={module.id}
+              />
+            ))
+          }
           </Switch>
         </Router>
       ), dest,
