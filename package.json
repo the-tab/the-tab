@@ -45,6 +45,7 @@
     "webpack-dev-server": "^2.11.0"
   },
   "dependencies": {
+    "@the-tab/the-tab-core-bookmarks": "0.0.3",
     "config": "^1.29.2",
     "firebase": "^4.8.2",
     "firebase-tools": "^3.17.0",
