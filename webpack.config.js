@@ -50,7 +50,7 @@ if (process.env.NODE_ENV === 'production') {
   );
 } else {
   // for local package development
-  // config.resolve.alias['@the-tab/the-tab-core-bookmarks'] = path.resolve(__dirname, '../the-tab-core-bookmarks');
+  config.resolve.alias['@the-tab/the-tab-core-bookmarks'] = path.resolve(__dirname, '../the-tab-core-bookmarks');
 }
 
 module.exports = config;
