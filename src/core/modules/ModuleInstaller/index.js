@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import { observer } from 'mobx-react';
 import * as Icon from 'react-feather';
 
 import styles from './styles.less';
 
-@observer
 export default class ModuleInstaller extends Component {
   static manifest = require('./manifest.json');
   static id = 'core-module-installer';

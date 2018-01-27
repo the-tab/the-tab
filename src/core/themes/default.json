@@ -1,0 +1,24 @@
+{
+  "background-primary": "white",
+  "background-secondary": "silver",
+  "background-tertiary": "whitesmoke",
+
+  "text-primary": "rgba(0,0,0,1)",
+  "text-secondary": "rgba(0,0,0,.85)",
+  "text-tertiary": "rgba(0,0,0,.75)",
+
+  "border-radius-primary": "3px",
+  "border-radius-secondary": "6px",
+  "border-radius-tertiary": "9px",
+
+  "font-size-primary": "18px",
+  "font-size-secondary": "14px",
+  "font-size-tertiary": "12px",
+  "font-size-quaternary": "10px",
+
+  "font-family-primary-url": "https://fonts.googleapis.com/css?family=Exo+2",
+  "font-family-primary-name": "'Exo 2', sans-serif",
+
+  "font-family-secondary-url": "https://fonts.googleapis.com/css?family=Source+Sans+Pro",
+  "font-family-secondary-name": "'Source Sans Pro', sans-serif"
+}
